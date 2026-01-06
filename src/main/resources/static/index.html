@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MacTrack</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<h1>MacTrack</h1>
+
+<div class="card">
+    <h2>Lägg till livsmedel:</h2>
+
+    <input type="text" id="name" placeholder="Livsmedel">
+    <input type="number" id="calories" placeholder="Kalorier">
+
+    <select id="mealType">
+        <option value="BREAKFAST">Frukost</option>
+        <option value="LUNCH">Lunch</option>
+        <option value="DINNER">Middag</option>
+    </select>
+
+    <button onclick="getMealTotal('BREAKFAST')">Visa frukost</button>
+    <button onclick="getMealTotal('LUNCH')">Visa lunch</button>
+    <button onclick="getMealTotal('DINNER')">Visa middag</button>
+    <button onclick="getMealTotal()">Visa dagens total</button>
+
+    <p id="result"></p>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
