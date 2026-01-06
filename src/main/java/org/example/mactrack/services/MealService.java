@@ -27,4 +27,9 @@ public class MealService {
         List<MealItem> items = mealItemRepository.findAllByMealTypeAndDate(mealType, today);
         return items.stream().mapToInt(MealItem::getCalories).sum();
     }
+    public int getTotalCaloriesForDay() {
+        LocalDate today = LocalDate.now();
+        List<MealItem> items = mealItemRepository.findAllByDate(today);
+        return items.stream().mapToInt(MealItem::getCalories).sum();
+    }
 }

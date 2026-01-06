@@ -11,4 +11,6 @@ import java.util.List;
 @Repository
 public interface MealItemRepository extends JpaRepository<MealItem, Long> {
     List<MealItem> findAllByMealTypeAndDate(MealType mealType, LocalDate date);
+
+    List<MealItem> findAllByDate(LocalDate date);
 }
