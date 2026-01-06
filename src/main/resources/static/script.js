@@ -43,11 +43,19 @@ function getMealTotal(mealType) {
         .then(total => {
                 document.getElementById("result").innerText =
                     mealType
-                        ? `Totalt för ${mealType.toLowerCase()}: ${total} kcal`
+                        ? `Totalt för ${mealTypeToSwedish(mealType)}: ${total} kcal`
                         : `Totalt idag: ${total} kcal`;
         })
         .catch(err => {
             console.error(err);
             alert("Något gick fel vid hämtning av totalsumma!");
         });
+}
+function mealTypeToSwedish(mealType) {
+    switch(mealType) {
+        case "BREAKFAST": return "frukost";
+        case "LUNCH": return "lunch";
+        case "DINNER": return "middag";
+        default: return mealType.toLowerCase();
+    }
 }

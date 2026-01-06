@@ -24,7 +24,7 @@ public class MealController {
     public int getTotalCalories(@PathVariable MealType mealType) {
         return mealService.getTotalCaloriesForMeal(mealType);
 }
-    @GetMapping("/total/day")
+    @GetMapping("/total")
     public int getTotalCaloriesForDay() {
         return mealService.getTotalCaloriesForDay();
     }
